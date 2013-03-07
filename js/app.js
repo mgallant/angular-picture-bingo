@@ -2,7 +2,7 @@
 
 /* define the app */
 var app = angular
-	.module("BingoApp", ['ngResource'])
+	.module("BingoApp", ['ngResource','filters'])
 	.controller('Bingo',function($scope, BingoItems, BingoList){
 		$scope.label = "Start";
 		$scope.items = BingoItems;
@@ -32,12 +32,4 @@ var app = angular
 			}
 		};
 
-	})
-	.filter('path', function() {
-		return function(input){
-			if(input) {
-				console.log(input);
-				return '/img/'+input;
-			}
-		}
-	})
+	});
